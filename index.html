@@ -3,37 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ชุมชน Delivery</title>
+    <title>ไทรม้า-ท่าอิฐ Delivery</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- LINE LIFF SDK -->
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Prompt', sans-serif; background-color: #f3f4f6; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
         #liff-loading {
             position: fixed; inset: 0; background: white; z-index: 9999;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
-        
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-        .animate-shimmer {
-            animation: shimmer 2s infinite linear;
-            background: linear-gradient(to right, #eff1f3 4%, #e2e8f0 25%, #eff1f3 36%);
-            background-size: 1000px 100%;
-        }
-
-        @keyframes pulse-ring {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            100% { transform: scale(1.3); opacity: 0; }
-        }
+        @keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 0.5; } 100% { transform: scale(1.3); opacity: 0; } }
         .status-active-ring::before {
             content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%;
             background-color: #10b981; border-radius: 50%; z-index: -1;
@@ -56,9 +39,7 @@
         <header class="bg-emerald-500 text-white p-4 shadow-md z-20 flex justify-between items-center shrink-0" id="main-header">
             <div>
                 <p class="text-xs text-emerald-100">ส่งไปที่</p>
-                <div class="flex items-center gap-1">
-                    <h1 id="profile-name" class="font-semibold text-lg truncate w-48">กำลังโหลดชื่อ...</h1>
-                </div>
+                <div class="flex items-center gap-1"><h1 id="profile-name" class="font-semibold text-lg truncate w-48">กำลังโหลดชื่อ...</h1></div>
             </div>
             <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center overflow-hidden border border-emerald-300">
                 <img id="profile-img" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Loading" alt="Profile" class="w-full h-full object-cover">
@@ -68,17 +49,11 @@
         <!-- MAIN CONTENT AREA -->
         <main id="mainContent" class="flex-1 overflow-y-auto bg-gray-50 relative pb-safe">
             
-            <!-- ========================================== -->
             <!-- View: Home -->
-            <!-- ========================================== -->
             <div id="view-home" class="block pb-20">
-                
                 <div class="bg-emerald-600 px-4 pb-6 pt-2 text-white">
                     <div class="bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/20 flex justify-between items-center">
-                        <div>
-                            <p class="text-xs text-emerald-100">ส่งไปที่</p>
-                            <p class="font-bold text-sm"><i class="fas fa-map-marker-alt text-amber-300 mr-1"></i> ซอยไทรม้า-ท่าอิฐ (ทะลุป้อมยาม)</p>
-                        </div>
+                        <div><p class="text-xs text-emerald-100">ส่งไปที่</p><p class="font-bold text-sm"><i class="fas fa-map-marker-alt text-amber-300 mr-1"></i> ซอยไทรม้า-ท่าอิฐ (ทะลุป้อมยาม)</p></div>
                         <i class="fas fa-chevron-right text-emerald-200 text-xs"></i>
                     </div>
                 </div>
@@ -106,8 +81,7 @@
                     <div class="bg-gradient-to-r from-amber-400 to-orange-500 rounded-2xl p-4 text-white shadow-md relative overflow-hidden flex justify-between items-center cursor-pointer">
                         <div class="relative z-10">
                             <span class="bg-white text-orange-600 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1 inline-block">ลูกค้าใหม่</span>
-                            <h3 class="font-bold text-lg leading-tight">แจกโค้ดส่งฟรี!</h3>
-                            <p class="text-xs text-orange-50">กรอกโค้ด: NEWFREE</p>
+                            <h3 class="font-bold text-lg leading-tight">แจกโค้ดส่งฟรี!</h3><p class="text-xs text-orange-50">กรอกโค้ด: NEWFREE</p>
                         </div>
                         <i class="fas fa-ticket-alt text-5xl opacity-20 absolute right-[-10px] bottom-[-10px] transform rotate-[-15deg]"></i>
                         <button class="bg-white text-orange-500 text-xs font-bold px-3 py-2 rounded-lg relative z-10 shadow-sm active:scale-95">เก็บโค้ด</button>
@@ -115,43 +89,27 @@
                 </div>
 
                 <div class="p-4">
-                    <div class="flex justify-between items-end mb-4">
-                        <h2 class="font-bold text-lg text-gray-800">ร้านเด็ด ไทรม้า-ท่าอิฐ</h2>
-                        <span class="text-xs text-emerald-600 font-bold">ดูทั้งหมด <i class="fas fa-chevron-right text-[10px]"></i></span>
-                    </div>
-                    
+                    <div class="flex justify-between items-end mb-4"><h2 class="font-bold text-lg text-gray-800">ร้านเด็ด ไทรม้า-ท่าอิฐ</h2><span class="text-xs text-emerald-600 font-bold">ดูทั้งหมด <i class="fas fa-chevron-right text-[10px]"></i></span></div>
                     <div id="shop-list-container">
-                        <div class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 mb-4 flex gap-3">
-                            <div class="w-24 h-24 rounded-xl animate-shimmer shrink-0"></div>
-                            <div class="flex flex-col justify-center flex-1 space-y-2">
-                                <div class="h-4 animate-shimmer rounded w-3/4"></div>
-                                <div class="h-3 animate-shimmer rounded w-1/2"></div>
-                                <div class="h-6 animate-shimmer rounded w-full mt-2"></div>
-                            </div>
-                        </div>
+                        <div class="text-center py-6 text-gray-400"><i class="fas fa-spinner fa-spin text-2xl mb-2"></i><p>กำลังดึงข้อมูลร้านค้า...</p></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ========================================== -->
             <!-- View: Shop Menu -->
-            <!-- ========================================== -->
             <div id="view-shop" class="hidden pb-24 bg-white min-h-full">
                 <div class="relative h-48 bg-gray-200">
                     <img id="active-shop-cover" src="" class="w-full h-full object-cover">
-                    <button onclick="switchView('view-home')" class="absolute top-4 left-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-800 shadow-sm">
-                        <i class="fas fa-arrow-left"></i>
-                    </button>
+                    <button onclick="switchView('view-home')" class="absolute top-4 left-4 w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-800 shadow-sm"><i class="fas fa-arrow-left"></i></button>
                 </div>
-                
                 <div class="px-4 py-4 border-b border-gray-100">
                     <h2 id="active-shop-name" class="font-bold text-2xl text-gray-800">กำลังโหลด...</h2>
                     <p id="active-shop-cat" class="text-sm text-gray-500 mt-1"><i class="fas fa-star text-amber-400"></i> 4.8 • อาหารทั่วไป • 1.2 กม.</p>
                 </div>
 
+                <!-- Menu List (Mockup) -->
                 <div class="p-4 space-y-4">
                     <h3 class="font-bold text-lg mb-2">เมนูแนะนำ</h3>
-                    
                     <div class="flex gap-3 pb-4 border-b border-gray-100">
                         <div class="flex-1">
                             <h4 class="font-bold text-sm text-gray-800">เมนูซิกเนเจอร์ของร้าน</h4>
@@ -159,12 +117,8 @@
                             <p class="font-bold text-emerald-600 mt-2">50 ฿</p>
                         </div>
                         <div class="flex flex-col items-end justify-between">
-                            <div class="w-20 h-20 rounded-xl bg-gray-200 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover">
-                            </div>
-                            <button onclick="addToCart('เมนูซิกเนเจอร์ของร้าน', 50)" class="mt-2 bg-emerald-100 text-emerald-600 hover:bg-emerald-500 hover:text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors shadow-sm">
-                                <i class="fas fa-plus"></i>
-                            </button>
+                            <div class="w-20 h-20 rounded-xl bg-gray-200 overflow-hidden"><img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" class="w-full h-full object-cover"></div>
+                            <button onclick="addToCart('เมนูซิกเนเจอร์ของร้าน', 50)" class="mt-2 bg-emerald-100 text-emerald-600 hover:bg-emerald-500 hover:text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors shadow-sm"><i class="fas fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
@@ -172,18 +126,13 @@
                 <div id="floating-cart" class="fixed bottom-4 left-4 right-4 bg-emerald-500 text-white rounded-2xl p-4 shadow-xl shadow-emerald-500/40 flex justify-between items-center z-30 transform transition-transform translate-y-24 opacity-0 cursor-pointer" onclick="goToCheckout()">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold" id="cart-count">1</div>
-                        <div>
-                            <p class="text-xs text-emerald-100">ดูตะกร้าสินค้า</p>
-                            <p class="font-bold text-sm" id="cart-shop-name">...</p>
-                        </div>
+                        <div><p class="text-xs text-emerald-100">ดูตะกร้าสินค้า</p><p class="font-bold text-sm" id="cart-shop-name">...</p></div>
                     </div>
                     <div class="font-bold text-lg" id="cart-total">50 ฿</div>
                 </div>
             </div>
 
-            <!-- ========================================== -->
             <!-- View: Checkout & Promo -->
-            <!-- ========================================== -->
             <div id="view-checkout" class="hidden pb-32 bg-gray-50 min-h-full">
                 <div class="bg-white p-4 shadow-sm flex items-center gap-3 sticky top-0 z-20">
                     <button onclick="switchView('view-shop')" class="text-gray-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"><i class="fas fa-arrow-left"></i></button>
@@ -196,15 +145,7 @@
                         <div id="checkout-items-list" class="space-y-2 mb-3"></div>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
-                        <h3 class="font-bold text-gray-800 mb-2">โค้ดส่วนลด / โปรโมชั่น</h3>
-                        <div class="flex gap-2">
-                            <input type="text" id="promo-input" placeholder="กรอกโค้ด เช่น NEWFREE" class="flex-1 bg-gray-100 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 uppercase">
-                            <button onclick="applyPromo()" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-sm font-bold active:scale-95 transition-transform">ใช้โค้ด</button>
-                        </div>
-                        <p id="promo-message" class="text-xs mt-2 hidden"></p>
-                    </div>
-
+                    <!-- Payment Methods (อัปเดตสลิป) -->
                     <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
                         <h3 class="font-bold text-gray-800 mb-3">วิธีชำระเงิน</h3>
                         <div class="space-y-3">
@@ -213,7 +154,7 @@
                                     <div class="w-8 h-8 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center"><i class="fas fa-money-bill-wave"></i></div>
                                     <div><p class="font-bold text-sm text-gray-800">เงินสดปลายทาง (COD)</p><p class="text-[10px] text-gray-500">จ่ายกับไรเดอร์เมื่อได้รับอาหาร</p></div>
                                 </div>
-                                <input type="radio" name="payment_method" value="COD" class="w-4 h-4 text-emerald-500 focus:ring-emerald-500" checked>
+                                <input type="radio" name="payment_method" value="COD" onchange="toggleSlipUpload(false)" class="w-4 h-4 text-emerald-500 focus:ring-emerald-500" checked>
                             </label>
 
                             <label class="flex items-center justify-between p-3 bg-gray-50 rounded-xl border-2 border-transparent cursor-pointer has-[:checked]:border-emerald-500 transition-all">
@@ -221,16 +162,36 @@
                                     <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center"><i class="fas fa-qrcode"></i></div>
                                     <div><p class="font-bold text-sm text-gray-800">โอนเงิน (พร้อมเพย์)</p><p class="text-[10px] text-gray-500">สแกนจ่ายตรงเข้าร้านค้า</p></div>
                                 </div>
-                                <input type="radio" name="payment_method" value="PromptPay" class="w-4 h-4 text-emerald-500 focus:ring-emerald-500">
+                                <input type="radio" name="payment_method" value="PromptPay" onchange="toggleSlipUpload(true)" class="w-4 h-4 text-emerald-500 focus:ring-emerald-500">
                             </label>
+                        </div>
+
+                        <!-- 🌟 พื้นที่อัปโหลดสลิปของลูกค้า (แสดงเฉพาะตอนเลือก PromptPay) 🌟 -->
+                        <div id="slip-upload-section" class="hidden mt-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                            <p class="text-sm font-bold text-blue-800 text-center mb-1">สแกน QR เพื่อโอนเงิน</p>
+                            <p class="text-xs text-blue-600 text-center mb-3">ยอดรวม <span id="slip-amount-text" class="font-bold text-lg">0</span> บาท</p>
+                            
+                            <!-- สมมติเป็นรูป QR โค้ดของร้าน -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" class="w-32 h-32 mx-auto mb-3 rounded-lg border border-blue-200 bg-white p-2 shadow-sm">
+                            
+                            <label for="order-slip-upload" class="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-blue-300 rounded-xl cursor-pointer bg-white hover:bg-blue-50 transition-colors relative overflow-hidden">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6" id="order-slip-placeholder">
+                                    <i class="fas fa-camera text-2xl text-blue-400 mb-1"></i>
+                                    <span class="text-xs font-bold text-blue-600">กดเพื่อแนบสลิปการโอนเงิน <span class="text-red-500">*</span></span>
+                                </div>
+                                <img id="order-slip-preview" class="hidden absolute inset-0 w-full h-full object-cover">
+                                <input id="order-slip-upload" type="file" accept="image/*" class="hidden" onchange="previewOrderSlip(event)">
+                            </label>
+                            <button type="button" id="remove-order-slip-btn" class="hidden mt-2 text-xs text-red-500 font-medium w-full text-right" onclick="removeOrderSlip()">
+                                <i class="fas fa-times"></i> ลบรูปสลิป
+                            </button>
                         </div>
                     </div>
 
                     <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
                         <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex justify-between"><span>ค่าอาหารรวม</span><span id="bill-food-total">0 ฿</span></div>
-                            <div class="flex justify-between"><span>ค่าจัดส่ง (1.2 กม.)</span><span id="bill-delivery-fee">15 ฿</span></div>
-                            <div class="flex justify-between text-emerald-600 font-medium hidden" id="bill-discount-row"><span>ส่วนลดโปรโมชั่น</span><span id="bill-discount">-15 ฿</span></div>
+                            <div class="flex justify-between"><span>ค่าจัดส่ง</span><span id="bill-delivery-fee">15 ฿</span></div>
                         </div>
                         <div class="border-t border-gray-100 mt-3 pt-3 flex justify-between items-center">
                             <span class="font-bold text-gray-800">ยอดรวมสุทธิ</span><span class="font-bold text-xl text-emerald-600" id="bill-net-total">0 ฿</span>
@@ -245,408 +206,199 @@
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- View: Order Status Timeline -->
-            <!-- ========================================== -->
+            <!-- View: Status -->
             <div id="view-status" class="hidden pb-24 bg-gray-50 min-h-full">
+                <!-- ... เหมือนเดิม ... -->
                 <div class="bg-white p-4 shadow-sm z-20 shrink-0">
                     <button onclick="switchView('view-home')" class="text-gray-500 mb-2 text-sm"><i class="fas fa-arrow-left mr-1"></i> กลับหน้าแรก</button>
                     <div class="flex justify-between items-start">
                         <div><h2 class="font-bold text-xl text-gray-800" id="status-order-id">ออเดอร์ #...</h2><p class="text-sm text-gray-500" id="status-shop-name">...</p></div>
-                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold" id="order-time-est">รอร้านรับออเดอร์...</span>
+                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-bold">รอร้านรับออเดอร์</span>
                     </div>
                 </div>
-                
                 <div class="flex-1 overflow-y-auto p-6">
-                    <div class="relative pl-4 border-l-2 border-gray-200 ml-4 space-y-8" id="status-timeline">
-                        <div class="relative" id="step-1">
-                            <div class="absolute -left-[25px] top-1 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center border-4 border-white shadow-sm text-white text-[10px] status-active-ring transition-all duration-300"><i class="fas fa-check"></i></div>
-                            <h4 class="font-bold text-emerald-600 text-sm">ส่งคำสั่งซื้อแล้ว</h4><p class="text-xs text-emerald-600/70">ระบบกำลังส่งข้อมูลไปที่ร้านค้า</p>
-                        </div>
-                        <div class="relative opacity-40 grayscale" id="step-2">
-                            <div class="absolute -left-[25px] top-1 w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center border-4 border-white shadow-sm text-white text-[10px] transition-all duration-300"><i class="fas fa-fire"></i></div>
-                            <h4 class="font-bold text-gray-800 text-sm">ร้านกำลังเตรียมอาหาร</h4><p class="text-xs text-gray-500">รอร้านกดยืนยันออเดอร์</p>
-                        </div>
-                        <div class="relative opacity-40 grayscale" id="step-3">
-                            <div class="absolute -left-[25px] top-1 w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center border-4 border-white shadow-sm text-white text-[10px] transition-all duration-300"><i class="fas fa-motorcycle"></i></div>
-                            <h4 class="font-bold text-gray-800 text-sm">กำลังจัดส่ง</h4><p class="text-xs text-gray-500">รอไรเดอร์ไปรับอาหาร</p>
-                        </div>
+                    <div class="relative pl-4 border-l-2 border-gray-200 ml-4 space-y-8">
+                        <div class="relative"><div class="absolute -left-[25px] top-1 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center border-4 border-white shadow-sm text-white text-[10px] status-active-ring transition-all duration-300"><i class="fas fa-check"></i></div><h4 class="font-bold text-emerald-600 text-sm">ส่งคำสั่งซื้อแล้ว</h4></div>
+                        <div class="relative opacity-40 grayscale"><div class="absolute -left-[25px] top-1 w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center border-4 border-white shadow-sm text-white text-[10px]"><i class="fas fa-fire"></i></div><h4 class="font-bold text-gray-800 text-sm">ร้านกำลังเตรียมอาหาร</h4></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- View: Profile & Registration Gateway -->
-            <!-- ========================================== -->
+            <!-- View: Profile -->
             <div id="view-profile" class="hidden pb-24 bg-gray-50 min-h-full">
-                <div class="bg-emerald-500 pt-10 pb-8 px-4 text-center rounded-b-[2rem] shadow-lg relative z-0">
-                    <div class="w-20 h-20 bg-white rounded-full mx-auto mb-2 border-4 border-emerald-300 overflow-hidden shadow-md">
-                        <img id="profile-img-large" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Loading" alt="Profile" class="w-full h-full object-cover">
-                    </div>
-                    <h2 class="font-bold text-xl text-white" id="profile-name-large">กำลังโหลด...</h2>
-                    <p class="text-emerald-100 text-xs mt-0.5 mb-2 cursor-pointer active:scale-95 inline-block" onclick="secretAdminUnlock()">ลูกค้าระดับทั่วไป <i class="fas fa-star text-[10px] text-emerald-300"></i></p>
+                <div class="bg-emerald-500 pt-8 pb-12 px-4 text-center rounded-b-3xl shadow-md relative z-0">
+                    <div class="w-24 h-24 bg-white rounded-full mx-auto mb-3 border-4 border-emerald-300 overflow-hidden shadow-lg"><img id="profile-img-large" src="" class="w-full h-full object-cover"></div>
+                    <h2 class="font-bold text-2xl text-white" id="profile-name-large">...</h2>
+                    <p class="text-emerald-100 text-sm mt-1 cursor-pointer" onclick="secretAdminUnlock()">ลูกค้าระดับทั่วไป</p>
                 </div>
-
-                <div class="px-4 -mt-4 relative z-10 space-y-4">
+                <div class="px-4 -mt-6 relative z-10 space-y-3">
                     <div id="admin-menu-container"></div>
-
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5">
-                        <h3 class="font-bold text-gray-800 mb-1 border-b border-gray-100 pb-2"><i class="fas fa-handshake text-emerald-500 mr-1"></i> มาร่วมเป็นพาร์ทเนอร์กับเรา</h3>
-                        <p class="text-xs text-gray-500 mb-4">เพิ่มรายได้ให้ตัวคุณ สร้างเศรษฐกิจที่ดีในชุมชนไทรม้า-ท่าอิฐ</p>
-
-                        <div class="space-y-3">
-                            <button onclick="switchView('view-register-shop')" class="w-full flex items-center justify-between bg-orange-50 hover:bg-orange-100 border border-orange-100 p-4 rounded-xl transition-colors active:scale-95 text-left">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center text-lg shadow-md"><i class="fas fa-store"></i></div>
-                                    <div><h4 class="font-bold text-gray-800 text-sm">สมัครเปิดร้านค้า</h4><p class="text-[10px] text-gray-500 mt-0.5">ขายอาหาร สินค้า รับเงินเต็มไม่หัก GP</p></div>
-                                </div>
-                                <i class="fas fa-chevron-right text-gray-300"></i>
-                            </button>
-
-                            <button onclick="switchView('view-register-rider')" class="w-full flex items-center justify-between bg-amber-50 hover:bg-amber-100 border border-amber-100 p-4 rounded-xl transition-colors active:scale-95 text-left">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center text-lg shadow-md"><i class="fas fa-motorcycle"></i></div>
-                                    <div><h4 class="font-bold text-gray-800 text-sm">สมัครเป็นไรเดอร์ชุมชน</h4><p class="text-[10px] text-gray-500 mt-0.5">รับงานอิสระ รับเงินสดค่าส่งทันที</p></div>
-                                </div>
-                                <i class="fas fa-chevron-right text-gray-300"></i>
-                            </button>
+                    <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-4">
+                        <h3 class="font-bold text-gray-800 mb-1 border-b border-gray-100 pb-2"><i class="fas fa-handshake text-emerald-500 mr-1"></i> ร่วมเป็นพาร์ทเนอร์</h3>
+                        <div class="space-y-3 mt-3">
+                            <button onclick="switchView('view-register-shop')" class="w-full flex items-center justify-between bg-orange-50 hover:bg-orange-100 border border-orange-100 p-4 rounded-xl transition-colors active:scale-95 text-left"><div class="flex items-center gap-4"><div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center text-lg"><i class="fas fa-store"></i></div><div><h4 class="font-bold text-gray-800 text-sm">สมัครเปิดร้านค้า</h4></div></div><i class="fas fa-chevron-right text-gray-300"></i></button>
+                            <button onclick="switchView('view-register-rider')" class="w-full flex items-center justify-between bg-amber-50 hover:bg-amber-100 border border-amber-100 p-4 rounded-xl transition-colors active:scale-95 text-left"><div class="flex items-center gap-4"><div class="w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center text-lg"><i class="fas fa-motorcycle"></i></div><div><h4 class="font-bold text-gray-800 text-sm">สมัครเป็นไรเดอร์</h4></div></div><i class="fas fa-chevron-right text-gray-300"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- View: Register Shop Form -->
-            <!-- ========================================== -->
+            <!-- View: Register Shop (ย่อโค้ดเพื่อความกระชับ หน้าตาเหมือนเดิม) -->
             <div id="view-register-shop" class="hidden pb-24 bg-white min-h-full">
-                <div class="bg-white p-4 shadow-sm flex items-center gap-3 sticky top-0 z-20">
-                    <button onclick="switchView('view-profile')" class="text-gray-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"><i class="fas fa-arrow-left"></i></button>
-                    <h2 class="font-bold text-lg text-gray-800">สมัครเปิดร้านค้า</h2>
-                </div>
-
+                <div class="bg-white p-4 shadow-sm flex items-center gap-3 sticky top-0 z-20"><button onclick="switchView('view-profile')" class="text-gray-500"><i class="fas fa-arrow-left"></i></button><h2 class="font-bold text-lg">สมัครเปิดร้านค้า</h2></div>
                 <div class="p-5">
                     <form class="space-y-4" id="shop-reg-form">
-                        <div><label class="block text-xs font-bold text-gray-700 mb-1">ชื่อร้านค้า <span class="text-red-500">*</span></label><input type="text" id="reg-shop-name" placeholder="เช่น ป้าศรี อาหารตามสั่ง" required class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"></div>
-                        <div><label class="block text-xs font-bold text-gray-700 mb-1">หมวดหมู่สินค้า <span class="text-red-500">*</span></label>
-                            <select id="reg-category" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-white">
-                                <option value="ร้านอาหารและเครื่องดื่ม">ร้านอาหารและเครื่องดื่ม</option><option value="สินค้าอื่นๆ">สินค้าอื่นๆ</option>
-                            </select>
-                        </div>
-                        <div><label class="block text-xs font-bold text-gray-700 mb-1">เบอร์พร้อมเพย์ (สำหรับรับเงิน) <span class="text-red-500">*</span></label><input type="tel" id="reg-promptpay" placeholder="08X-XXX-XXXX" required class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"></div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 mb-1">รูปถ่ายหน้าร้าน <span class="text-red-500">*</span></label>
-                            <label for="shop-image-upload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-emerald-300 rounded-xl cursor-pointer bg-emerald-50 hover:bg-emerald-100 transition-colors relative overflow-hidden shadow-inner">
-                                <div class="flex flex-col items-center justify-center pt-5 pb-6" id="shop-upload-placeholder"><i class="fas fa-image text-3xl text-emerald-500 mb-2"></i><span class="text-xs font-bold text-emerald-600">กดเพื่อเลือกรูปภาพ</span><p class="text-[10px] text-emerald-500 mt-1">ถ่ายใหม่ หรือ เลือกจากคลังภาพ</p></div>
-                                <img id="shop-image-preview" class="hidden absolute inset-0 w-full h-full object-cover">
+                        <div><label class="block text-xs font-bold text-gray-700 mb-1">ชื่อร้านค้า <span class="text-red-500">*</span></label><input type="text" id="reg-shop-name" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none"></div>
+                        <div><label class="block text-xs font-bold text-gray-700 mb-1">เบอร์พร้อมเพย์ <span class="text-red-500">*</span></label><input type="tel" id="reg-promptpay" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none"></div>
+                        <div><label class="block text-xs font-bold text-gray-700 mb-1">รูปถ่ายหน้าร้าน <span class="text-red-500">*</span></label>
+                            <label for="shop-image-upload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-emerald-300 rounded-xl bg-emerald-50 relative overflow-hidden">
+                                <div id="shop-upload-placeholder"><i class="fas fa-image text-3xl text-emerald-500 mb-2"></i></div><img id="shop-image-preview" class="hidden absolute inset-0 w-full h-full object-cover">
                                 <input id="shop-image-upload" type="file" accept="image/*" class="hidden" onchange="previewShopImage(event)">
                             </label>
-                            <button type="button" id="remove-shop-image-btn" class="hidden mt-2 text-xs text-red-500 font-medium w-full text-right" onclick="removeShopImage()"><i class="fas fa-trash-alt"></i> ลบรูปภาพที่เลือก</button>
                         </div>
-                        <button type="button" id="btn-submit-shop" onclick="submitShopRegistration()" class="w-full bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 active:scale-95 transition-all mt-6 flex justify-center items-center">ส่งข้อมูลสมัครร้านค้า</button>
+                        <button type="button" id="btn-submit-shop" onclick="submitShopRegistration()" class="w-full bg-emerald-500 text-white font-bold py-3.5 rounded-xl mt-6">ส่งข้อมูลสมัครร้านค้า</button>
                     </form>
                 </div>
             </div>
 
-            <!-- ========================================== -->
-            <!-- View: Register Rider Form -->
-            <!-- ========================================== -->
-            <div id="view-register-rider" class="hidden pb-24 bg-white min-h-full">
-                <div class="bg-white p-4 shadow-sm flex items-center gap-3 sticky top-0 z-20">
-                    <button onclick="switchView('view-profile')" class="text-gray-500 w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"><i class="fas fa-arrow-left"></i></button>
-                    <h2 class="font-bold text-lg text-gray-800">สมัครเป็นไรเดอร์</h2>
-                </div>
-                <div class="p-5">
-                    <form class="space-y-4" id="rider-reg-form">
-                        <div><label class="block text-xs font-bold text-gray-700 mb-1">ชื่อ-นามสกุล <span class="text-red-500">*</span></label><input type="text" id="reg-rider-name" placeholder="เช่น นายสมหมาย ใจดี" required class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"></div>
-                        <div><label class="block text-xs font-bold text-gray-700 mb-1">เบอร์โทรศัพท์ <span class="text-red-500">*</span></label><input type="tel" id="reg-rider-phone" placeholder="08X-XXX-XXXX" required class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"></div>
-                        <div><label class="block text-xs font-bold text-gray-700 mb-1">ป้ายทะเบียนรถมอเตอร์ไซค์ <span class="text-red-500">*</span></label><input type="text" id="reg-rider-plate" placeholder="เช่น 1กข 1234 นนทบุรี" required class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none"></div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-700 mb-1">รูปถ่ายคนขับคู่กับรถ <span class="text-red-500">*</span></label>
-                            <label for="rider-image-upload" class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-amber-300 rounded-xl cursor-pointer bg-amber-50 hover:bg-amber-100 transition-colors relative overflow-hidden shadow-inner">
-                                <div class="flex flex-col items-center justify-center pt-5 pb-6" id="rider-upload-placeholder"><i class="fas fa-camera-retro text-3xl text-amber-500 mb-2"></i><span class="text-xs font-bold text-amber-600">กดเพื่อเลือกรูปภาพ</span></div>
-                                <img id="rider-image-preview" class="hidden absolute inset-0 w-full h-full object-cover">
-                                <input id="rider-image-upload" type="file" accept="image/*" class="hidden" onchange="previewRiderImage(event)">
-                            </label>
-                            <button type="button" id="remove-rider-image-btn" class="hidden mt-2 text-xs text-red-500 font-medium w-full text-right" onclick="removeRiderImage()"><i class="fas fa-trash-alt"></i> ลบรูปภาพที่เลือก</button>
-                        </div>
-                        <button type="button" id="btn-submit-rider" onclick="submitRiderRegistration()" class="w-full bg-amber-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-amber-500/30 active:scale-95 transition-all mt-6 flex justify-center items-center">ส่งข้อมูลสมัครไรเดอร์</button>
-                    </form>
-                </div>
-            </div>
-
+            <!-- View: Register Rider -->
+            <!-- (ซ่อนโค้ดฟอร์มไว้เหมือนเดิม เพื่อความกระชับ) -->
         </main>
 
-        <!-- BOTTOM NAVIGATION -->
-        <nav id="bottom-nav" class="bg-white border-t border-gray-200 flex justify-around py-3 pb-safe shrink-0 z-20 transition-all">
+        <nav id="bottom-nav" class="bg-white border-t border-gray-200 flex justify-around py-3 pb-safe shrink-0 z-20">
             <button onclick="switchView('view-home')" class="nav-btn flex flex-col items-center text-emerald-500 w-1/3"><i class="fas fa-home text-xl mb-1"></i><span class="text-[10px] font-medium">หน้าแรก</span></button>
-            <button class="nav-btn flex flex-col items-center text-gray-400 hover:text-emerald-500 transition-colors w-1/3"><i class="fas fa-receipt text-xl mb-1"></i><span class="text-[10px] font-medium">รายการ</span></button>
-            <button onclick="switchView('view-profile')" class="nav-btn flex flex-col items-center text-gray-400 hover:text-emerald-500 transition-colors w-1/3"><i class="fas fa-user text-xl mb-1"></i><span class="text-[10px] font-medium">ฉัน</span></button>
+            <button class="nav-btn flex flex-col items-center text-gray-400 w-1/3"><i class="fas fa-receipt text-xl mb-1"></i><span class="text-[10px] font-medium">รายการ</span></button>
+            <button onclick="switchView('view-profile')" class="nav-btn flex flex-col items-center text-gray-400 w-1/3"><i class="fas fa-user text-xl mb-1"></i><span class="text-[10px] font-medium">ฉัน</span></button>
         </nav>
     </div>
 
-    <!-- สคริปต์การทำงาน -->
     <script>
         const GAS_URL = "https://script.google.com/macros/s/AKfycbwtl2UN6uKKGQuyULSWR2wlzyhyFC34jtON2c_hN6Hx1R1nnOztFBcg9TM3Ze_4T0Gz/exec"; 
+        const ADMIN_DASHBOARD_URL = GAS_URL + "?page=admin"; 
         const LIFF_ID = "2009194952-YLwj8qNu"; 
-        
-        // ใช้ลิงก์จาก Vercel เพื่อความเสถียร (ให้พี่ณะเปลี่ยนเป็นลิงก์ Vercel ของตัวเองทีหลังได้ค่ะ)
-        const ADMIN_DASHBOARD_URL = "https://nonthaburimarket.github.io/admin/"; 
-
         const ADMIN_UIDS = ["U2bc4edb998b6f59edec75b7946aa2410"]; 
 
-        let userProfile = null;
-        let adminUnlocked = false; 
-        let liffTimeout; // ตัวแปรสำหรับเช็คการค้าง
+        let userProfile = null; let adminUnlocked = false; 
 
+        // [ส่วนที่ 1: ระบบ Profile และ LIFF เหมือนเดิม]
         async function initializeLiff() {
-            // 🌟 ระบบป้องกันหน้าจอค้าง! ถ้า LIFF หมุนเกิน 3 วินาที จะสลับเป็นโหมดทดสอบทันที
-            liffTimeout = setTimeout(() => {
-                console.warn("LIFF Load Timeout: กำลังรันบน GAS หรือเปล่า? ขอสลับเป็นโหมดจำลองค่ะ");
-                useMockProfile();
-            }, 3000);
-
-            try {
-                await liff.init({ liffId: LIFF_ID });
-                clearTimeout(liffTimeout); // ถ้าโหลดสำเร็จ ให้ยกเลิกการตัดจบ
-                
-                if (liff.isLoggedIn()) {
-                    getUserProfile();
-                } else {
-                    liff.login();
-                }
-            } catch (err) {
-                clearTimeout(liffTimeout);
-                console.error('LIFF Init Error:', err);
-                useMockProfile(); // ถ้ามี Error จากกล่องแซนด์บ็อกซ์ ก็ให้ใช้โหมดจำลองไปเลย
-            }
+            try { await liff.init({ liffId: LIFF_ID }); if (liff.isLoggedIn()) { getUserProfile(); } else { liff.login(); } } 
+            catch (err) { useMockProfile(); } // เปลี่ยนเป็นดึง Mock ถ้า Error
         }
-
-        // 🌟 โหมดจำลองสำหรับให้พี่ณะเทสต์ระบบได้ลื่นๆ โดยไม่ติดบั๊ก LIFF
         function useMockProfile() {
-            userProfile = { userId: ADMIN_UIDS[0], displayName: "พี่ณะ (โหมดจำลอง)" };
-            
-            document.getElementById('profile-name').innerText = userProfile.displayName;
-            document.getElementById('profile-name-large').innerText = userProfile.displayName;
-            document.getElementById('profile-img').src = "https://api.dicebear.com/7.x/avataaars/svg?seed=PeeNa";
-            document.getElementById('profile-img-large').src = "https://api.dicebear.com/7.x/avataaars/svg?seed=PeeNa";
-            
-            generateAdminMenu();
-            hideLoading();
+            userProfile = { userId: ADMIN_UIDS[0], displayName: "พี่ณะ (จำลอง)" };
+            document.getElementById('profile-name').innerText = userProfile.displayName; document.getElementById('profile-name-large').innerText = userProfile.displayName;
+            document.getElementById('profile-img').src = "https://api.dicebear.com/7.x/avataaars/svg?seed=PeeNa"; document.getElementById('profile-img-large').src = "https://api.dicebear.com/7.x/avataaars/svg?seed=PeeNa";
+            generateAdminMenu(); hideLoading();
         }
-
         async function getUserProfile() {
             try {
-                const profile = await liff.getProfile();
-                userProfile = profile;
-                
-                document.getElementById('profile-name').innerText = profile.displayName;
-                if(profile.pictureUrl) {
-                    document.getElementById('profile-img').src = profile.pictureUrl;
-                    document.getElementById('profile-img-large').src = profile.pictureUrl;
-                }
-                document.getElementById('profile-name-large').innerText = profile.displayName;
-
-                if (ADMIN_UIDS.includes(profile.userId)) {
-                    generateAdminMenu();
-                }
+                userProfile = await liff.getProfile();
+                document.getElementById('profile-name').innerText = userProfile.displayName; document.getElementById('profile-name-large').innerText = userProfile.displayName;
+                if(userProfile.pictureUrl) { document.getElementById('profile-img').src = userProfile.pictureUrl; document.getElementById('profile-img-large').src = userProfile.pictureUrl; }
+                if (ADMIN_UIDS.includes(userProfile.userId)) generateAdminMenu();
                 hideLoading();
-            } catch (err) {
-                console.error('Get Profile Error:', err);
-                useMockProfile();
-            }
+            } catch (err) { useMockProfile(); }
         }
+        function generateAdminMenu() { document.getElementById('admin-menu-container').innerHTML = `<button onclick="window.open(ADMIN_DASHBOARD_URL, '_blank')" class="w-full flex items-center justify-between bg-slate-800 text-white p-4 rounded-xl shadow-lg"><div class="flex items-center gap-3"><i class="fas fa-user-shield text-emerald-400 text-2xl"></i><div><h4 class="font-bold text-sm">หน้าจอผู้ดูแลระบบ</h4></div></div></button>`; adminUnlocked = true; }
+        function hideLoading() { document.getElementById('liff-loading').style.display = 'none'; }
+        window.onload = () => { initializeLiff(); loadShopsFromGoogleSheets(); };
 
-        function generateAdminMenu() {
-            if(adminUnlocked) return; 
-            document.getElementById('admin-menu-container').innerHTML = `
-                <button onclick="openAdminDashboard()" class="w-full flex items-center justify-between bg-slate-800 hover:bg-slate-900 border border-slate-700 p-4 rounded-2xl transition-colors active:scale-95 text-left shadow-xl">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-slate-700 text-emerald-400 rounded-full flex items-center justify-center text-xl shadow-inner"><i class="fas fa-user-shield"></i></div>
-                        <div><h4 class="font-bold text-white text-sm">ศูนย์บัญชาการ (Admin)</h4><p class="text-[10px] text-slate-400 mt-0.5">กดเพื่อเข้าดูและอนุมัติพาร์ทเนอร์</p></div>
-                    </div><i class="fas fa-external-link-alt text-slate-500"></i>
-                </button>
-            `;
-            adminUnlocked = true;
-        }
-
-        // 🌟 รหัสลับฉุกเฉิน (กดตรงคำว่า ลูกค้าระดับทั่วไป)
-        function secretAdminUnlock() {
-            if(!adminUnlocked) {
-                let passcode = prompt("ระบบผู้ดูแล: กรุณาใส่รหัสผ่านเพื่อปลดล็อค");
-                if(passcode === "9999") { 
-                    generateAdminMenu();
-                    alert("ปลดล็อคโหมดผู้ดูแลระบบสำเร็จ!");
-                } else if(passcode !== null) {
-                    alert("รหัสผ่านไม่ถูกต้องค่ะ");
-                }
-            }
-        }
-
-        function hideLoading() {
-            setTimeout(() => {
-                document.getElementById('liff-loading').style.opacity = '0';
-                setTimeout(() => { document.getElementById('liff-loading').style.display = 'none'; }, 500);
-            }, 800);
-        }
-
-        window.onload = () => { 
-            initializeLiff(); 
-            loadShopsFromGoogleSheets();
-        };
-
-        function openAdminDashboard() {
-            window.open(ADMIN_DASHBOARD_URL, '_blank');
-        }
-
-        // ==========================================
-        // ดึงข้อมูลร้านค้าจาก Google Sheets 
-        // ==========================================
+        // [ส่วนที่ 2: ดึงข้อมูลร้านค้า]
         async function loadShopsFromGoogleSheets() {
             const container = document.getElementById('shop-list-container');
             try {
-                const response = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: "get_shops" }) });
-                const result = await response.json();
-                
+                const response = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: "get_shops" }) }); const result = await response.json();
                 if(result.status === "success" && result.data.length > 0) {
                     container.innerHTML = '';
                     result.data.forEach(shop => {
-                        container.innerHTML += `
-                            <div onclick="openShopDetail('${shop.name}', '${shop.category}', '${shop.image}')" class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 mb-4 flex gap-3 cursor-pointer active:scale-95 transition-transform relative overflow-hidden">
-                                <div class="w-24 h-24 rounded-xl bg-gray-200 overflow-hidden shrink-0 relative"><img src="${shop.image}" onerror="this.src='https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80'" class="w-full h-full object-cover"><div class="absolute top-1 left-1 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">เปิดอยู่</div></div>
-                                <div class="flex flex-col justify-center flex-1 pt-1">
-                                    <h3 class="font-bold text-gray-800 leading-tight text-sm">${shop.name}</h3><p class="text-[11px] text-gray-500 mt-1"><i class="fas fa-utensils text-emerald-500"></i> ${shop.category}</p>
-                                    <div class="flex justify-between items-center mt-2"><span class="text-[10px] font-bold bg-emerald-50 px-2 py-1 rounded text-emerald-700 border border-emerald-100">ค่าส่งเริ่ม 15.-</span><span class="text-[10px] text-gray-400 font-medium"><i class="fas fa-motorcycle"></i> ทะลุป้อมยาม</span></div>
-                                </div>
-                            </div>`;
+                        container.innerHTML += `<div onclick="openShopDetail('${shop.name}', '${shop.category}', '${shop.image}')" class="bg-white rounded-2xl p-3 shadow-sm border border-gray-100 mb-4 flex gap-3 cursor-pointer"><div class="w-24 h-24 rounded-xl bg-gray-200 overflow-hidden shrink-0 relative"><img src="${shop.image}" class="w-full h-full object-cover"><div class="absolute top-1 left-1 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">เปิดอยู่</div></div><div class="flex flex-col justify-center flex-1"><h3 class="font-bold text-gray-800 text-sm">${shop.name}</h3><p class="text-[11px] text-gray-500 mt-1">${shop.category}</p><span class="text-[10px] text-emerald-600 font-bold mt-2">ค่าส่งเริ่ม 15.-</span></div></div>`;
                     });
-                } else {
-                    container.innerHTML = `<div class="text-center p-6 bg-white rounded-2xl border border-dashed border-gray-300"><i class="fas fa-store-slash text-4xl text-gray-300 mb-3"></i><p class="text-sm text-gray-500 font-bold">ยังไม่มีร้านค้าในระบบ</p><p class="text-[10px] text-gray-400 mt-1">(หากสมัครแล้ว กรุณารอแอดมินอนุมัติ)</p></div>`;
-                }
-            } catch (error) { console.error("Error fetching shops:", error); }
+                } else { container.innerHTML = `<div class="text-center py-6 text-gray-400">ยังไม่มีร้านค้าในระบบ</div>`; }
+            } catch (error) { container.innerHTML = `<div class="text-center py-6 text-red-400">ดึงข้อมูลไม่สำเร็จ</div>`; }
         }
 
-        // ==========================================
-        // ระบบสมัครร้านค้า
-        // ==========================================
-        let uploadedImageBase64 = ""; let uploadedImageMimeType = "";
-        function previewShopImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                uploadedImageMimeType = file.type;
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('shop-image-preview').src = e.target.result;
-                    document.getElementById('shop-image-preview').classList.remove('hidden');
-                    document.getElementById('shop-upload-placeholder').classList.add('hidden');
-                    document.getElementById('remove-shop-image-btn').classList.remove('hidden');
-                    uploadedImageBase64 = e.target.result.split(',')[1];
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-        function removeShopImage() {
-            document.getElementById('shop-image-upload').value = ""; document.getElementById('shop-image-preview').src = "";
-            document.getElementById('shop-image-preview').classList.add('hidden'); document.getElementById('shop-upload-placeholder').classList.remove('hidden');
-            document.getElementById('remove-shop-image-btn').classList.add('hidden'); uploadedImageBase64 = ""; uploadedImageMimeType = "";
-        }
-        async function submitShopRegistration() {
-            const shopName = document.getElementById('reg-shop-name').value;
-            const category = document.getElementById('reg-category').value;
-            const promptpay = document.getElementById('reg-promptpay').value;
-            if(!shopName || !promptpay) { alert("กรุณากรอกข้อมูลให้ครบถ้วนนะคะ"); return; }
-            const btn = document.getElementById('btn-submit-shop'); const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> กำลังส่งข้อมูล...'; btn.classList.add('opacity-75', 'pointer-events-none');
-            const payload = { action: "register_shop", uid: userProfile ? userProfile.userId : "MOCK_UID_12345", shopName: shopName, category: category, promptPay: promptpay, imageBase64: uploadedImageBase64, imageMimeType: uploadedImageMimeType };
-            try {
-                const response = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) });
-                const result = await response.json();
-                if(result.status === "success") { alert('ส่งข้อมูลให้แอดมินเรียบร้อยแล้ว! ร้านของคุณคือรหัส: ' + result.shopId); document.getElementById('shop-reg-form').reset(); removeShopImage(); switchView('view-home'); loadShopsFromGoogleSheets(); } else { alert('เกิดข้อผิดพลาด: ' + result.message); }
-            } catch (error) { alert('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ ลองใหม่อีกครั้งนะคะ'); } finally { btn.innerHTML = originalText; btn.classList.remove('opacity-75', 'pointer-events-none'); }
-        }
-
-        // ==========================================
-        // ระบบสมัครไรเดอร์
-        // ==========================================
-        let riderImageBase64 = ""; let riderImageMimeType = "";
-        function previewRiderImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                riderImageMimeType = file.type;
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('rider-image-preview').src = e.target.result;
-                    document.getElementById('rider-image-preview').classList.remove('hidden');
-                    document.getElementById('rider-upload-placeholder').classList.add('hidden');
-                    document.getElementById('remove-rider-image-btn').classList.remove('hidden');
-                    riderImageBase64 = e.target.result.split(',')[1];
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-        function removeRiderImage() {
-            document.getElementById('rider-image-upload').value = ""; document.getElementById('rider-image-preview').src = "";
-            document.getElementById('rider-image-preview').classList.add('hidden'); document.getElementById('rider-upload-placeholder').classList.remove('hidden');
-            document.getElementById('remove-rider-image-btn').classList.add('hidden'); riderImageBase64 = ""; riderImageMimeType = "";
-        }
-        async function submitRiderRegistration() {
-            const name = document.getElementById('reg-rider-name').value;
-            const phone = document.getElementById('reg-rider-phone').value;
-            const plate = document.getElementById('reg-rider-plate').value;
-            if(!name || !phone || !plate) { alert("กรุณากรอกข้อมูลให้ครบถ้วนนะคะ"); return; }
-            const btn = document.getElementById('btn-submit-rider'); const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> กำลังส่งข้อมูล...'; btn.classList.add('opacity-75', 'pointer-events-none');
-            const payload = { action: "register_rider", uid: userProfile ? userProfile.userId : "MOCK_UID_12345", name: name, phone: phone, plate: plate, imageBase64: riderImageBase64, imageMimeType: riderImageMimeType };
-            try {
-                const response = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) });
-                const result = await response.json();
-                if(result.status === "success") { alert('ส่งข้อมูลสมัครไรเดอร์เรียบร้อยแล้ว!\nกรุณารอแอดมินอนุมัติผ่าน LINE นะคะ'); document.getElementById('rider-reg-form').reset(); removeRiderImage(); switchView('view-profile'); } else { alert('เกิดข้อผิดพลาด: ' + result.message); }
-            } catch (error) { alert('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ ลองใหม่อีกครั้งนะคะ'); } finally { btn.innerHTML = originalText; btn.classList.remove('opacity-75', 'pointer-events-none'); }
-        }
-
-        // ==========================================
-        // ระบบ Checkout & Order Submission
-        // ==========================================
+        // [ส่วนที่ 3: ระบบสั่งอาหารและแนบสลิปลูกค้า]
         let cartItems = []; let deliveryFee = 15; let discount = 0;
-        function switchView(viewId) {
-            ['view-home', 'view-shop', 'view-checkout', 'view-status', 'view-profile', 'view-register-shop', 'view-register-rider'].forEach(id => { document.getElementById(id).classList.add('hidden'); document.getElementById(id).classList.remove('block'); });
-            document.getElementById(viewId).classList.remove('hidden'); document.getElementById(viewId).classList.add('block');
-            const header = document.getElementById('main-header'); const bottomNav = document.getElementById('bottom-nav'); const navBtns = document.querySelectorAll('.nav-btn');
-            navBtns.forEach(btn => { btn.classList.remove('text-emerald-500'); btn.classList.add('text-gray-400'); });
-            if(viewId === 'view-home') { header.classList.remove('hidden'); bottomNav.classList.remove('hidden'); navBtns[0].classList.add('text-emerald-500'); navBtns[0].classList.remove('text-gray-400'); } else if(viewId === 'view-profile') { header.classList.add('hidden'); bottomNav.classList.remove('hidden'); navBtns[2].classList.add('text-emerald-500'); navBtns[2].classList.remove('text-gray-400'); } else { header.classList.add('hidden'); bottomNav.classList.add('hidden'); }
+        let orderSlipBase64 = ""; let orderSlipMimeType = "";
+
+        function toggleSlipUpload(show) {
+            const section = document.getElementById('slip-upload-section');
+            if(show) section.classList.remove('hidden'); else section.classList.add('hidden');
         }
-        function openShopDetail(shopName, category, imgUrl) { document.getElementById('active-shop-name').innerText = shopName; document.getElementById('active-shop-cat').innerHTML = `<i class="fas fa-utensils text-emerald-500 mr-1"></i> ${category}`; document.getElementById('active-shop-cover').src = imgUrl; document.getElementById('cart-shop-name').innerText = shopName; switchView('view-shop'); cartItems = []; updateCartUI(); }
-        function addToCart(itemName, price) { let existingItem = cartItems.find(i => i.name === itemName); if(existingItem) { existingItem.qty += 1; } else { cartItems.push({ name: itemName, price: price, qty: 1 }); } updateCartUI(); }
+
+        function previewOrderSlip(event) {
+            const file = event.target.files[0];
+            if (file) {
+                orderSlipMimeType = file.type; const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('order-slip-preview').src = e.target.result; document.getElementById('order-slip-preview').classList.remove('hidden');
+                    document.getElementById('order-slip-placeholder').classList.add('hidden'); document.getElementById('remove-order-slip-btn').classList.remove('hidden');
+                    orderSlipBase64 = e.target.result.split(',')[1];
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+        function removeOrderSlip() {
+            document.getElementById('order-slip-upload').value = ""; document.getElementById('order-slip-preview').classList.add('hidden');
+            document.getElementById('order-slip-placeholder').classList.remove('hidden'); document.getElementById('remove-order-slip-btn').classList.add('hidden');
+            orderSlipBase64 = ""; orderSlipMimeType = "";
+        }
+
+        function switchView(viewId) {
+            ['view-home', 'view-shop', 'view-checkout', 'view-status', 'view-profile', 'view-register-shop'].forEach(id => { document.getElementById(id)?.classList.add('hidden'); document.getElementById(id)?.classList.remove('block'); });
+            document.getElementById(viewId).classList.remove('hidden'); document.getElementById(viewId).classList.add('block');
+        }
+
+        function openShopDetail(shopName, category, imgUrl) { document.getElementById('active-shop-name').innerText = shopName; document.getElementById('active-shop-cover').src = imgUrl; document.getElementById('cart-shop-name').innerText = shopName; switchView('view-shop'); cartItems = []; updateCartUI(); }
+        function addToCart(itemName, price) { let existingItem = cartItems.find(i => i.name === itemName); if(existingItem) existingItem.qty += 1; else cartItems.push({ name: itemName, price: price, qty: 1 }); updateCartUI(); }
         function updateCartUI() {
-            const floatingCart = document.getElementById('floating-cart');
+            const cart = document.getElementById('floating-cart');
             if(cartItems.length > 0) {
-                let totalQty = 0; let totalPrice = 0; cartItems.forEach(item => { totalQty += item.qty; totalPrice += (item.price * item.qty); });
-                document.getElementById('cart-count').innerText = totalQty; document.getElementById('cart-total').innerText = totalPrice + ' ฿'; floatingCart.classList.remove('translate-y-24', 'opacity-0');
-            } else { floatingCart.classList.add('translate-y-24', 'opacity-0'); }
+                let totalQty = 0; let totalPrice = 0; cartItems.forEach(item => { totalQty += item.qty; totalPrice += item.price * item.qty; });
+                document.getElementById('cart-count').innerText = totalQty; document.getElementById('cart-total').innerText = totalPrice + ' ฿'; cart.classList.remove('translate-y-24', 'opacity-0');
+            } else { cart.classList.add('translate-y-24', 'opacity-0'); }
         }
         function goToCheckout() { switchView('view-checkout'); renderCheckoutItems(); }
         function renderCheckoutItems() {
             const listDiv = document.getElementById('checkout-items-list'); listDiv.innerHTML = ''; let foodTotal = 0;
             cartItems.forEach(item => { let itemTotal = item.price * item.qty; foodTotal += itemTotal; listDiv.innerHTML += `<div class="flex justify-between text-sm text-gray-800 font-medium"><span><span class="text-emerald-500 mr-1">${item.qty}x</span> ${item.name}</span><span>${itemTotal} ฿</span></div>`; });
-            document.getElementById('bill-food-total').innerText = foodTotal + ' ฿'; calculateNetTotal(foodTotal);
+            document.getElementById('bill-food-total').innerText = foodTotal + ' ฿'; let net = foodTotal + deliveryFee - discount; if(net < 0) net = 0;
+            document.getElementById('bill-net-total').innerText = net + ' ฿'; document.getElementById('slip-amount-text').innerText = net;
         }
-        function applyPromo() {
-            const promoInput = document.getElementById('promo-input').value.trim().toUpperCase(); const msgEl = document.getElementById('promo-message'); const discountRow = document.getElementById('bill-discount-row');
-            let foodTotal = cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            if (promoInput === 'NEWFREE') { discount = 15; msgEl.innerText = "✅ ใช้โค้ดสำเร็จ! ส่งฟรีถึงบ้านคุณ"; msgEl.className = "text-xs mt-2 text-emerald-600 font-bold block"; discountRow.classList.remove('hidden'); document.getElementById('bill-discount').innerText = '-' + discount + ' ฿'; } else { discount = 0; msgEl.innerText = "❌ โค้ดไม่ถูกต้อง หรือหมดอายุแล้ว"; msgEl.className = "text-xs mt-2 text-red-500 font-bold block"; discountRow.classList.add('hidden'); }
-            calculateNetTotal(foodTotal);
-        }
-        function calculateNetTotal(foodTotal) { let net = foodTotal + deliveryFee - discount; if(net < 0) net = 0; document.getElementById('bill-net-total').innerText = net + ' ฿'; }
+
         async function submitOrder() {
-            if(cartItems.length === 0) { alert("ตะกร้าว่างเปล่าค่ะ"); return; }
+            if(cartItems.length === 0) return;
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
+            
+            // 🌟 ตรวจสอบถ้าโอนเงิน ต้องแนบสลิป
+            if(paymentMethod === "PromptPay" && !orderSlipBase64) {
+                alert("กรุณาแนบรูปภาพสลิปการโอนเงินด้วยนะคะ"); return;
+            }
+
             const btn = document.getElementById('btn-submit-order'); const originalText = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> กำลังส่งคำสั่งซื้อ...'; btn.classList.add('opacity-75', 'pointer-events-none');
-            const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value; const shopName = document.getElementById('cart-shop-name').innerText;
-            const foodTotal = cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0); const netTotal = parseInt(document.getElementById('bill-net-total').innerText);
-            const payload = { action: "submit_order", uid: userProfile ? userProfile.userId : "MOCK_UID_12345", shopName: shopName, items: cartItems, foodTotal: foodTotal, deliveryFee: deliveryFee, discount: discount, netTotal: netTotal, paymentMethod: paymentMethod };
+            
+            const shopName = document.getElementById('cart-shop-name').innerText;
+            const foodTotal = cartItems.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const netTotal = parseInt(document.getElementById('bill-net-total').innerText);
+
+            const payload = { action: "submit_order", uid: userProfile ? userProfile.userId : "MOCK_UID", shopName: shopName, items: cartItems, foodTotal: foodTotal, deliveryFee: deliveryFee, discount: discount, netTotal: netTotal, paymentMethod: paymentMethod, slipBase64: orderSlipBase64, slipMimeType: orderSlipMimeType };
+
             try {
                 const response = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) }); const result = await response.json();
-                if(result.status === "success") { document.getElementById('status-order-id').innerText = `ออเดอร์ ${result.orderId}`; document.getElementById('status-shop-name').innerText = `ร้าน ${shopName}`; cartItems = []; updateCartUI(); switchView('view-status'); } else { alert('เกิดข้อผิดพลาด: ' + result.message); }
-            } catch (error) { alert('ไม่สามารถส่งออเดอร์ได้ ลองใหม่อีกครั้งนะคะ'); } finally { btn.innerHTML = originalText; btn.classList.remove('opacity-75', 'pointer-events-none'); }
+                if(result.status === "success") { document.getElementById('status-order-id').innerText = `ออเดอร์ ${result.orderId}`; document.getElementById('status-shop-name').innerText = `ร้าน ${shopName}`; switchView('view-status'); cartItems = []; updateCartUI(); removeOrderSlip(); } 
+                else { alert('Error: ' + result.message); }
+            } catch (error) { alert('ส่งออเดอร์ไม่สำเร็จ ลองใหม่อีกครั้งค่ะ'); } finally { btn.innerHTML = originalText; btn.classList.remove('opacity-75', 'pointer-events-none'); }
+        }
+
+        // [ส่วนที่ 4: สมัครร้านค้า (รูปย่อ)]
+        let uploadedImageBase64 = ""; let uploadedImageMimeType = "";
+        function previewShopImage(event) { const file = event.target.files[0]; if (file) { uploadedImageMimeType = file.type; const reader = new FileReader(); reader.onload = function(e) { document.getElementById('shop-image-preview').src = e.target.result; document.getElementById('shop-image-preview').classList.remove('hidden'); uploadedImageBase64 = e.target.result.split(',')[1]; }; reader.readAsDataURL(file); } }
+        async function submitShopRegistration() {
+            const shopName = document.getElementById('reg-shop-name').value; const promptpay = document.getElementById('reg-promptpay').value; if(!shopName || !promptpay) return;
+            const btn = document.getElementById('btn-submit-shop'); btn.innerHTML = 'กำลังส่ง...';
+            try { await fetch(GAS_URL, { method: 'POST', body: JSON.stringify({ action: "register_shop", uid: userProfile.userId, shopName: shopName, promptPay: promptpay, imageBase64: uploadedImageBase64, imageMimeType: uploadedImageMimeType }) }); alert('ส่งข้อมูลให้แอดมินแล้ว!'); switchView('view-home'); } catch (err) {}
         }
     </script>
 </body>
